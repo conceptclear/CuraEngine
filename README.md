@@ -70,7 +70,7 @@ CURA_ENGINE_SEARCH_PATH=/path/to/Cura/resources/definitions:/user/defined/path
 Internals
 =========
 
-The Cura Engine is structured as mainly .h files. This is not standard for a C++ project. However, using less cpp files makes the optimizer work harder and removes linking error issues. It's partialy a result of lazyness but comes in handy for optimalizations.
+The Cura Engine is structured as mainly .h files. This is not standard for a C++ project. However, using less cpp files makes the optimizer work harder and removes linking error issues. It's partialy a result of lazyness but comes in handy for optimizations.
 
 The .h files contain different steps called from the main.cpp file. The main.cpp file contains the global slicing logic.
 
@@ -100,7 +100,7 @@ These polygons are generated in a 2 step process. First all triangles are cut in
 Next all these line-segments are connected to eachother to make Polygons. The vertex<->face relations of the OptimizedModel help to make this process fast, as there is a huge chance that 2 connecting faces also make 2 connecting line-segments.
 This code also patches up small holes in the 3D model, so your model doesn't need to be a perfect Manifold. It also deals with incorrect normals, so it can flip around line-segments to fit end-to-end.
 
-After the Slicer we have closed Polygons which can be used in Clipper, as Clipper can only opperate on closed 2D polygons.
+After the Slicer we have closed Polygons which can be used in Clipper.
 
 LayerParts
 ==========
